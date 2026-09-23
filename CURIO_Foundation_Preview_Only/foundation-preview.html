@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFFDFC">
+  <title>CURIO Foundation QA Preview</title>
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/foundation.css">
+  <link rel="stylesheet" href="./css/foundation-preview.css">
+</head>
+<body>
+  <div class="curio-app curio-app--with-nav">
+    <main class="curio-screen">
+      <div class="curio-content">
+        <div class="curio-preview-intro">
+          <h1 class="text-h1">Foundation QA Preview</h1>
+          <p class="text-small text-secondary">공통 UI 골격 확인용 · 실제 CURIO 화면이나 기능 흐름이 아닙니다.</p>
+        </div>
+
+        <section aria-labelledby="preview-type"><h2 id="preview-type" class="text-h2">Typography</h2>
+          <p class="text-display">Display</p><p class="text-h1">H1</p><p class="text-h2">H2</p><p class="text-h3">H3</p>
+          <p class="text-body">Body</p><p class="text-small text-secondary">Small · Secondary</p><p class="text-caption text-tertiary">Caption · Tertiary</p>
+        </section>
+
+        <section aria-labelledby="preview-buttons"><h2 id="preview-buttons" class="text-h2">Buttons</h2>
+          <div id="preview-button-list" class="curio-preview-stack"></div>
+        </section>
+
+        <section aria-labelledby="preview-chips"><h2 id="preview-chips" class="text-h2">Chips</h2>
+          <div class="curio-chip-row">
+            <button type="button" class="curio-chip curio-chip--filter">Filter</button>
+            <button type="button" class="curio-chip curio-chip--category">Category</button>
+            <button type="button" class="curio-chip curio-chip--selected" aria-pressed="true">Selected</button>
+            <span class="curio-chip curio-chip--tag">Tag</span>
+          </div>
+        </section>
+
+        <section aria-labelledby="preview-badges"><h2 id="preview-badges" class="text-h2">Goods status badges</h2>
+          <div id="preview-statuses" class="curio-chip-row"></div>
+          <p class="text-caption text-secondary">MATCHING은 Goods가 아닌 TradeRequest/TradeMatch의 상태입니다.</p>
+        </section>
+
+        <section aria-labelledby="preview-cards"><h2 id="preview-cards" class="text-h2">Card shells</h2>
+          <div id="preview-cards" class="curio-preview-stack"></div>
+        </section>
+
+        <section aria-labelledby="preview-headers"><h2 id="preview-headers" class="text-h2">Header patterns</h2>
+          <div id="preview-header-list" class="curio-preview-stack"></div>
+        </section>
+
+        <section aria-labelledby="preview-forms"><h2 id="preview-forms" class="text-h2">Form controls</h2>
+          <div class="curio-preview-stack">
+            <label class="curio-field text-small" for="preview-input">Input<input id="preview-input" class="curio-input" placeholder="입력 예시"></label>
+            <label class="curio-field text-small" for="preview-search">Search Input<span class="curio-search"><svg class="curio-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg><input id="preview-search" type="search" class="curio-input" placeholder="검색 예시"></span></label>
+            <label class="curio-field text-small" for="preview-select">Select<select id="preview-select" class="curio-select"><option>선택 예시</option></select></label>
+            <label class="curio-field text-small" for="preview-textarea">Textarea<textarea id="preview-textarea" class="curio-textarea" placeholder="내용 예시"></textarea></label>
+            <label class="curio-checkbox"><input type="checkbox">Checkbox</label>
+            <div class="curio-card-grid"><button type="button" class="curio-choice" aria-pressed="false">Unselected</button><button type="button" class="curio-choice" aria-pressed="true">Selected</button></div>
+          </div>
+        </section>
+
+        <section aria-labelledby="preview-states"><h2 id="preview-states" class="text-h2">Common states</h2>
+          <div class="curio-preview-stack">
+            <div class="curio-skeleton curio-preview-skeleton" aria-hidden="true"></div>
+            <div class="curio-state"><div class="curio-state__mascot-slot text-caption" aria-hidden="true">Asset</div><strong>Empty</strong><span class="text-small text-secondary">승인된 CURIO 캐릭터를 넣을 영역</span></div>
+            <div class="curio-state curio-state--error"><strong>Error</strong><span class="text-small text-secondary">설명과 재시도 버튼 자리</span></div>
+            <div class="curio-state curio-state--success"><strong>Success</strong><span class="text-small text-secondary">짧은 결과와 다음 행동 자리</span></div>
+            <div class="curio-state" role="status"><span class="curio-spinner" aria-hidden="true"></span><strong>Loading</strong></div>
+          </div>
+        </section>
+
+        <section aria-labelledby="preview-overlays"><h2 id="preview-overlays" class="text-h2">Modal / Sheet / Toast shells</h2>
+          <div class="curio-preview-stack">
+            <div class="curio-dialog curio-preview-dialog"><strong>Modal</strong><p class="text-small text-secondary">내용 영역</p></div>
+            <div class="curio-dialog curio-preview-dialog"><strong>Confirm Modal</strong><div class="curio-dialog__actions"><span class="curio-preview-action">보조 버튼 영역</span><span class="curio-preview-action">확인 버튼 영역</span></div></div>
+            <div class="curio-dialog curio-preview-dialog curio-preview-sheet"><strong>Bottom Sheet</strong><p class="text-small text-secondary">내용 영역</p></div>
+            <div class="curio-toast curio-preview-toast" role="status">Toast preview</div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script type="module">
+    import { createButton, createCardShell, createHeader, createBottomNavigation, createGoodsStatusBadge, createIconButton } from './js/ui.js';
+    const buttons = document.querySelector('#preview-button-list');
+    buttons.append(
+      createButton({ label: 'Primary · full width', full: true }),
+      createButton({ label: 'Secondary', variant: 'secondary' }),
+      createButton({ label: 'Text', variant: 'text' }),
+      createIconButton({ icon: 'search', label: '검색 예시' }),
+      createButton({ label: 'Disabled', disabled: true })
+    );
+    const badges = document.querySelector('#preview-statuses');
+    for (const status of ['WANT', 'PLANNED', 'OWNED', 'DUPLICATE', 'TRADE', 'ARCHIVED']) badges.append(createGoodsStatusBadge(status));
+    const cards = document.querySelector('#preview-cards');
+    for (const [kind, media] of [['base', false], ['feature', false], ['goods', true], ['event', true], ['trade', false], ['cover', true], ['summary', false], ['passport', true]]) cards.append(createCardShell(kind, { media, label: `${kind} shell` }));
+    const headers = document.querySelector('#preview-header-list');
+    for (const variant of ['title', 'back', 'search', 'more', 'notification']) headers.append(createHeader({ title: `${variant} header`, variant }));
+    document.querySelector('.curio-app').append(createBottomNavigation({ active: 'collection' }));
+  </script>
+</body>
+</html>
